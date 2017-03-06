@@ -65,6 +65,10 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
 		app.revisarPermisos();
+		cordova.plugins.backgroundMode.setDefaults({ title:'SAGA-CALL',text:'Marcado rápido para atención de Emergencias' ,icon:'icon.png' });
+		cordova.plugins.backgroundMode.enable();
+		cordova.plugins.backgroundMode.overrideBackButton();
+
     },
     // Update DOM on a Received Event
     receivedEvent: function(id) {
